@@ -1,0 +1,31 @@
+
+module eight_tb;
+
+    logic [7:0] a, b;
+    logic cin;
+    logic [7:0] s;
+    logic cout;
+
+    eightbit i ( .a(a), .b(b),.cin(cin),.s(s),.cout(cout) );
+
+    initial begin
+        a = 8'b00100111;
+        b = 8'b01010101;
+        cin = 0;
+        #10;
+
+        a = 8'b10011001;
+        b = 8'b10011001;
+        cin = 0;
+        #10;
+        
+        a = 8'b01011001;
+        b = 8'b01000111;
+        cin = 0;
+        #10;
+        
+        $finish;
+    end
+endmodule
+
+endmodule
