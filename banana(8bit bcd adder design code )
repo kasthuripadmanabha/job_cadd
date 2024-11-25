@@ -1,0 +1,11 @@
+module eightbit(input logic [7:0] a, b, input logic cin, output logic [7:0] s, output logic cout);
+logic [7:0] sum;
+logic [7:0] n;
+    
+    assign sum = a + b + cin;
+    assign n[3:0] = (sum[3:0] > 9) ? sum[3:0] + 6 : sum[3:0];
+    assign n[7:4] = (sum[7:4] > 9) ? sum[7:4] + 6 : sum[7:4];
+    
+    assign s = n;
+    assign cout = (sum > 9);
+endmodule
